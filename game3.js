@@ -1,6 +1,30 @@
-let playerScore = 0;
-let computerScore = 0;
-let rounds = 0;
+const buttons = document.querySelectorAll('button');
+const currentRound = document.getElementById('round');
+const playerChoice = document.getElementById('player-choice');
+const computerChoice = document.getElementById('computer-choice');
+const playerScoreDisplay = document.getElementById('player-score');
+const computerScoreDisplay = document.getElementById('computer-score');
+const message = document.getElementById('message');
+
+let playerScore, computerScore, rounds, playing;
+
+const init = function () {
+    playerScore = 0;
+    computerScore = 0;
+    rounds = 0;
+    playing = true;
+}
+
+init();
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        let playerSelection = button.id;
+        let computerSelection = getComputerChoice();
+        console.log(playerSelection, computerSelection);
+        playRound(playerSelection, computerSelection);
+    })
+})
 
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
@@ -8,56 +32,55 @@ function getComputerChoice() {
     return choice;
 }
 
-for (let i = 0; i < 5; i++) {
-    let playerSelection = prompt("Rock paper or scissors?");
-    let computerSelection = getComputerChoice();
-    playerSelection = playerSelection.toLowerCase();
-    console.log(playerSelection, computerSelection);
-    playRound(playerSelection,computerSelection);
+function playRound(playerSelection, computerSelection) {
+    if (playing) {
+    playerChoice.innerText = playerSelection;
+    computerChoice.innerText = computerSelection;
     
-  
- }
 
- function playRound(playerSelection, computerSelection){
-    
     if (playerSelection === computerSelection) {
         console.log('Tie Game');
+        message.innerText = 'Tie Game';
     } else if (playerSelection == "rock" && (computerSelection == "scissors")) {
         console.log('You win! Rock beats Scissors');
+        message.innerText = 'You win! Rock beats Scissors';
         playerScore++;
     } else if (playerSelection == "paper" && (computerSelection == "rock")) {
         console.log('You win! Paper beats Rock');
+        message.innerText = 'You win! Paper beats Rock';
         playerScore++;
     } else if (playerSelection == "scissors" && (computerSelection == "paper")) {
         console.log('You win! Scissors beats Paper');
+        message.innerText = 'You win! Scissors beats Paper';
         playerScore++;
     } else if (playerSelection == "scissors" && (computerSelection == "rock")) {
         console.log('You Lose! Rock beats scissors');
+        message.innerText = 'You Lose! Rock beats scissors';
         computerScore++;
     } else if (playerSelection == "rock" && (computerSelection == "paper")) {
         console.log('You Lose! Paper beats Rock');
+        message.innerText = 'You Lose! Paper beats Rock';
         computerScore++;
     } else if (playerSelection == "paper" && (computerSelection == "scissors")) {
         console.log('You Lose! Scissors beats paper');
+        message.innerText = 'You Lose! Scissors beats paper';
         computerScore++;
-    } else if (playerSelection == "") {
-        console.log('You entered nothing and that is not a valid play. Please choose Rock, Paper or Scissors.');
-    } else {
-        console.log('You entered ' + playerSelection + ' and that is not a valid play. Please choose Rock, Paper or Scissors.');
-    }   
-    rounds++;
-    console.log('Round ' + rounds + ' complete');
-    console.log(playerScore + ' for you and ' + computerScore + ' for the computer');
- }
- 
- function result() {
-    if (playerScore > computerScore) {
-        console.log('You win with ' + playerScore + ' points');
-    } else if (playerScore < computerScore) {
-        console.log('You lose');
-    } else {
-        console.log('Its a tie!');
-    }
- }
 
-result();
+    }
+    rounds++;
+    currentRound.innerText = rounds;
+    playerScoreDisplay.innerText = playerScore;
+    computerScoreDisplay.innerText = computerScore;
+    checkRounds();
+}
+}
+
+function checkRounds() {
+    if (rounds === 5) {
+        console.log('game over');
+        playing = false;
+    } else {
+        console.log('game goes on');
+    }
+}
+

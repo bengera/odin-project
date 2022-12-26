@@ -1,15 +1,31 @@
 .body {
   background-color: bisque;
-}
-
-li {
-  display: block;
-  float: left;
-  width: 25%;
-  border: 2px solid white;
-  padding: 5px;
-  height: 40px;
-  background-color: #4A2DB6;
-  color: white;
   box-sizing: border-box;
 }
+
+.container {
+  border: 2px solid #000;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  /* border: 2px solid red; */
+}
+
+.scores {
+  display: flex;
+  border: 2px solid black;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.red {
+  color: red;
+}
+
