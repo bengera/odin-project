@@ -21,7 +21,7 @@ for (let i = 0; i < 5; i++) {
  function playRound(playerSelection, computerSelection){
     
     if (playerSelection === computerSelection) {
-        console.log('Tie Game');
+        console.log('Tied Game');
     } else if (playerSelection == "rock" && (computerSelection == "scissors")) {
         console.log('You win! Rock beats Scissors');
         playerScore++;
