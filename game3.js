@@ -56,7 +56,7 @@ for (let i = 0; i < 5; i++) {
     } else if (playerScore < computerScore) {
         console.log('You lose');
     } else {
-        console.log('Its a tie');
+        console.log('Its a tie!');
     }
  }
 
