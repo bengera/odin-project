@@ -5,6 +5,7 @@ const computerChoice = document.getElementById('computer-choice');
 const playerScoreDisplay = document.getElementById('player-score');
 const computerScoreDisplay = document.getElementById('computer-score');
 const message = document.getElementById('message');
+const buttonReplay = document.getElementById('replay');
 
 let playerScore, computerScore, rounds, playing;
 
@@ -61,7 +62,7 @@ function playRound(playerSelection, computerSelection) {
         console.log('You Lose! Paper beats Rock');
         message.innerText = 'You Lose! Paper beats Rock';
         computerScore++;
-    } else if (playerSelection == "paper" && (computerSelection == "scissors")) {
+    } else if  (playerSelection == "paper" && (computerSelection == "scissors")) {
         console.log('You Lose! Scissors beats paper');
         message.innerText = 'You Lose! Scissors beats paper';
         computerScore++;
@@ -76,11 +77,20 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function checkRounds() {
-    if (rounds === 5) {
+    if (rounds === 5 && (computerScore > playerScore)) {
         console.log('game over');
+        message.innerText = 'Game over, you Lose!';
         playing = false;
-    } else {
-        console.log('game goes on');
+        
+    } else if (rounds === 5 && (playerScore > computerScore)) {
+        console.log('Game over, you Win!');
+        message.innerText = 'Game over, you Win!';
+        playing = false;
+    }  else if (rounds === 5 && (playerScore === computerScore)) {  
+        console.log('Game over, its a tie!');
+        message.innerText = 'Game over, its a tie!';
     }
 }
+
+// buttonReplay.addEventListener('click', init);
 
