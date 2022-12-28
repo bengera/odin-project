@@ -52,13 +52,8 @@ h1 {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-
-  
-  background-image: url(../img/background.webp);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
+  background-image: linear-gradient(to right, #1a1919 0%, black 100%);
+ 
 }
 
 .choices {
@@ -71,7 +66,6 @@ h1 {
 .scores {
   display: flex;
   align-items: center;
-  // border: 2px solid black;
   justify-content: center;
   gap: 8.5rem;
   height: 150px;
@@ -106,7 +100,9 @@ h1 {
   
 }
 
-
+#reset {
+  position: relative;
+}
 
 #replay {
   padding-top: 2rem;
@@ -119,6 +115,17 @@ h1 {
   display: flex;
   width: 320px;
   margin: 0 auto;
+}
+
+#round {
+  padding: 2rem;
+}
+
+#computer-choice,
+#player-choice,
+#round {
+  font-size: 30px;
+  font-weight: 800;
 }
 
 #player-choice-image,
@@ -154,3 +161,17 @@ h1 {
 .hide {
   display: none;
 }
+
+.margin-center {
+  margin: 0 auto;
+  padding: 1rem;
+  cursor: pointer;
+  background-color: #000000;
+  color: #FFF;
+  font-weight: 800;
+  border: 0;
+  width: 200px;
+  position: absolute;
+  left: 40%;
+}
+

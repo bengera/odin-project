@@ -1,4 +1,3 @@
-// const output = document.getElementById('output');
 const buttons = document.querySelectorAll('button');
 const currentRound = document.getElementById('round');
 const playerChoice = document.getElementById('player-choice');
@@ -18,18 +17,21 @@ const computerChoiceImage = document.getElementById('computer-choice-image');
 
 let playerScore, computerScore, rounds, playing;
 
-// window.addEventListener('load', () => {
-//     console.log('loaded');
-//     output.classList.add('show')
-    
-// })
 
 
-const init = function () {
+function init () {
     playerScore = 0;
     computerScore = 0;
     rounds = 0;
     playing = true;
+
+    currentRound.textContent = 0;
+    playerChoice.textContent = 'Player';
+    computerChoice.textContent = 'Computer';
+    message.textContent = 'Let\'s play';
+    playerScoreDisplay.textContent = 0;
+    computerScoreDisplay.textContent = 0;
+    
 }
 
 init();
@@ -137,17 +139,37 @@ function checkRounds() {
         console.log('game over');
         message.innerText = 'Game over, you Lose!';
         playing = false;
+        resetGame();
 
     } else if (rounds === 5 && (playerScore > computerScore)) {
         console.log('Game over, you Win!');
         message.innerText = 'Game over, you Win!';
         playing = false;
+        resetGame();
 
     } else if (rounds === 5 && (playerScore === computerScore)) {
         console.log('Game over, its a tie!');
         message.innerText = 'Game over, its a tie!';
         playing = false;
+        resetGame();
     }
 }
 
-// buttonReplay.addEventListener('click', init);
+function resetGame() {
+    const resetBox = document.getElementById("reset");
+    const resetButton = document.createElement("BUTTON");
+    const buttonNode = document.createTextNode("Play again")
+    resetButton.appendChild(buttonNode);
+    resetButton.classList.add('margin-center');
+    resetBox.appendChild(resetButton);
+    
+    resetBox.addEventListener('click', () => {
+        init();
+        resetButton.style.display = "none";
+        console.log('reset clicked');
+    })
+    
+}
+
+
+
