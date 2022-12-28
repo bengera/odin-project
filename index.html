@@ -5,42 +5,59 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="#">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <script defer src="game3.js"></script>
     <title>Section 2: JavaScript Language Basics</title>
 </head>
 
 <body>
     <div class="container">
         <h1>Odin Project - Rock Paper Scissors</h1>
-    <div class="output">
-        <div class="buttons-container">
-    <button id="rock" class="button-53">Rock</button>
-    <button id="paper" class="button-53">Paper</button>
-    <button id="scissors" class="button-53">Scissors</button>
-</div>
+        <div id="output" class="output">
+            <div class="buttons-container">
+                <button id="rock" class="button-53">Rock</button>
+                <button id="paper" class="button-53">Paper</button>
+                <button id="scissors" class="button-53">Scissors</button>
+            </div>
 
-    <div class="choices">
-    <p id="player-choice">PC</p>
-    <p id="computer-choice">CC</p>
-</div>
+            <div class="choices">
+                <p id="player-choice">Player</p>
+                <p id="computer-choice">Computer</p>
+            </div>
 
-    <p id="round">0</p>
-    <p id="message">.</p>
+            <p id="round">0</p>
+            <p id="message" class="message">Let's play!</p>
 
-    <div class="scores">
-    <p class="red" id="player-score">0</p>
-    <p class="red" id="computer-score">0</p>
-</div>
+            <div class="player-selections-container">
+            <div class="player-selection-box">
+                <div id="player-choice-image"></div>
+            </div>
 
-<!-- <button id="replay">Play again</button> -->
+            <div class="computer-selection-box">
+                <div id="computer-choice-image"></div>
+            </div>
+
+        </div>
+
+            <div class="scores">
+                <p class="score" id="player-score">0</p>
+                <p class="score" id="computer-score">0</p>
+            </div>
+
+            <!-- <button id="replay">Play again</button> -->
 
 
 
-</div>
+        </div>
+
+        </div>
+
 
 </body>
 
-<script src="game3.js"></script>
+
 
 </html>
