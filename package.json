@@ -1,0 +1,19 @@
+{
+  "name": "odin-project",
+  "version": "1.0.0",
+  "description": "Rock paper scissors game for Odin Project",
+  "main": "game3.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bengera/odin-project.git"
+  },
+  "author": "Ben",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bengera/odin-project/issues"
+  },
+  "homepage": "https://github.com/bengera/odin-project#readme"
+}
